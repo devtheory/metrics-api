@@ -1,0 +1,7 @@
+<h1><%= "#{current_user.email}'s Apps" %></h1>
+
+<ul>
+  <% @apps.each do |app| %>
+    <%= link_to app.name, app %>
+  <% end %>
+</ul>
