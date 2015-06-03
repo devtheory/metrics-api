@@ -2,6 +2,6 @@
 
 <ul>
   <% @apps.each do |app| %>
-    <%= link_to app.name, app %>
+    <%= link_to app.name, [current_user, app] %>
   <% end %>
 </ul>

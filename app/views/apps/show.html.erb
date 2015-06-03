@@ -1,3 +1,5 @@
 <h1><%= @app.name %></h1>
+<h4>Number of events: <%= @events ? @events.count : "0" %></h4>
 <%= @app.url %>
-<%= link_to "Remove", @app, method: :delete %>
+<%= link_to "Edit", edit_user_app_path(current_user, @app) %>
+<%= link_to "Remove", [current_user, @app], method: :delete %>
