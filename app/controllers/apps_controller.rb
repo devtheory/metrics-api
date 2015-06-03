@@ -18,7 +18,7 @@ class AppsController < ApplicationController
   
   def show
     @app = App.find(params[:id])
-    @events = @app.events.group_by(&:name)
+    @events = @app.events
   end
   
   def index
@@ -56,3 +56,4 @@ class AppsController < ApplicationController
     params.require(:app).permit(:name, :url)
   end
 end
+# curl -v -H "Accept: application/json" -H "Origin: https://www.facebook.com" -H "Content-Type: application/json" -X POST -d '{"event":{"name":"foobar"}}' https://metrics-api-devtheory.c9.io/api/events

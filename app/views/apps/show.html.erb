@@ -3,3 +3,10 @@
 <%= @app.url %>
 <%= link_to "Edit", edit_user_app_path(current_user, @app) %>
 <%= link_to "Remove", [current_user, @app], method: :delete %>
+
+<h2>Events</h2>
+<ul>
+    <% @events.each do |event| %>
+        <li><%= event.name %></li>
+    <% end %>
+</ul>

@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     end
   end
   
+  namespace :api, defaults: {format: :json} do
+    resources :events, only: [:create]
+  end
+  
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
